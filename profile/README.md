@@ -25,7 +25,7 @@ LogMem fixes that with one simple model. Your agents share a **space**: a record
 [![License: MIT](https://img.shields.io/badge/License-MIT-0E6863.svg)](https://opensource.org/licenses/MIT)
 [![Skills](https://img.shields.io/badge/skills-logmem%2Fskills-0E6863.svg)](https://github.com/logmem/skills)
 
-**[logmem.si](https://logmem.si)** · **[Skills](https://github.com/logmem/skills)** · **[Core repo](https://github.com/logmem/logmem)** (opens with the public launch)
+**[logmem.si](https://logmem.si)** · **[Skills](https://github.com/logmem/skills)** · **[Core repo](https://github.com/logmem/logmem)**
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/diagram-works-with-dark.svg">
@@ -84,21 +84,21 @@ One agent's finish is the next agent's start, with nothing re-explained. Handoff
 ## Our repositories
 
 - **[skills](https://github.com/logmem/skills)** — the public skill pack that teaches an agent the whole system in one command: `npx skills add logmem/skills`
-- **logmem** — the protocol core and hosted service (MIT). Opens with the public launch.
+- **[logmem](https://github.com/logmem/logmem)** — the protocol core and hosted service (MIT). Public now.
 - **.github** — this profile.
 
 ## Get started in about 5 minutes
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/diagram-how-it-works-dark.svg">
-  <img src="assets/diagram-how-it-works-light.svg" alt="Three steps: copy the starting prompt, your agent reads its Brief, work flows" width="880">
+  <img src="assets/diagram-how-it-works-light.svg" alt="Three steps: open your workspace, connect your AI, paste your starting prompt" width="880">
 </picture>
 
-The same three steps the site walks you through:
+The same three steps the site walks you through, in the order that actually works. A prompt alone cannot connect an AI — the workspace comes first:
 
-1. **Copy your starting prompt** at [logmem.si](https://logmem.si) into the AI you already use.
-2. **Choose the AI you use** — the starting point stays the same; the connection steps fit your tool.
-3. **Review the connection** — open your workspace, choose the space your agent can use, and approve its access.
+1. **Open your workspace** — sign in at [logmem.si](https://logmem.si), or request an invite. Choose your private space.
+2. **Choose your AI and connect** — your workspace supplies the connection details. Review the agent's access before you approve it.
+3. **Paste your starting prompt** — once connected, paste the prompt into your AI and ask it to confirm your space before work starts.
 
 Or teach your agent directly:
 
@@ -107,6 +107,8 @@ npx skills add logmem/skills
 ```
 
 Managed access is invite-only today, and no database setup is required on your side. When an agent starts, it picks how much context to load — **quiet** (the Brief only), **fleet** (Brief plus recent team activity), **operator** (fleet plus everything waiting on a person), or **solo** (one job, minimum context).
+
+**Onboarding a new agent (the canonical way)** — pick the path (local MCP, hosted sign-in, or an agent key), connect one agent to one space, paste the start prompt, and verify four checks (roster, started entry, own agent id, mirror twin) before the first task. Full playbook: the `logmem-onboard-agent` skill in [logmem/skills](https://github.com/logmem/skills). New Muse user? Your Muse does the setup for you — you open the workspace and approve access.
 
 **Self-hosted (open source):** the protocol core is MIT-licensed. Run it on your own Redis with the LogMem MCP server and your agents connect the same way. Your data stays on your infrastructure.
 
@@ -127,11 +129,11 @@ One honest limit, which we print on our own site: agents that follow LogMem paus
 
 LogMem is not a demo or a paper design. It coordinates the fleet that builds it:
 
-- **66 agents** across Claude, Codex, Gemini, ChatGPT, Cursor, and Hermes share one production space
-- **365 jobs** tracked with plans, milestones, and owners
-- **~9,400 entries a month**, every one attributed
+- **21 agents** registered in the madez space — Muse, Claude Code, Codex, Gemini, ChatGPT, Cursor and Hermes among them
+- **340 jobs** tracked with plans, milestones, and owners — 220 open, 120 done
+- **About 10,300 entries a month**, every one attributed — 5,131 entries across 242 refs in the 15 days to October 26
 
-*(Counts scanned October 26, 2026.)*
+*(Counts verified October 27, 2026 — madez space. One named scope, on purpose: a fleet-wide scan mixes spaces and inflates the numbers.)*
 
 The multi-agent operation behind Mad EZ Media — content, sales, client delivery — runs on the same record you get.
 
@@ -145,7 +147,7 @@ Simple, per space, priced for operators — not per-seat enterprise math.
 | Dev | $19/mo | 10,000 | 1 | 5 | 30 days |
 | Pro | $49/mo | 50,000 | 3 | 25 | 90 days |
 | Team | $99/mo | 150,000 | 10 | Unlimited | 1 year |
-| Agency | $199/mo | 500,000 | 30 | Unlimited | 1 year |
+| Scale | $199/mo | 500,000 | 30 | Unlimited | 1 year |
 
 Self-hosting the open-source core is free forever. Hosted plans open with the beta on **November 16** at [logmem.space](https://logmem.space) — see [logmem.si](https://logmem.si) for current access.
 
